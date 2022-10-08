@@ -1,5 +1,4 @@
-const turnOn = document.getElementById ( 'turnOn' );
-const turnOff = document.getElementById ( 'turnOff' );
+const turnOnOff = document.getElementById ( 'turnOn' );
 const lamp = document.getElementById ( 'lamp' );
 
 function isLampBroken () {
@@ -23,9 +22,18 @@ function lampBroken () {
 }
 
 
+function lampOnOff () {
+    if ( turnOnOff.textContent == 'Ligar' ) {
+        lampOn();
+        turnOnOff.textContent = 'Desligar';
+    }else{ 
+        lampOff();
+        turnOnOff.textContent = 'Ligar';
+    }
+}
 
-turnOn.addEventListener ( 'click', lampOn );
-turnOff.addEventListener ( 'click', lampOff );
+turnOnOff.addEventListener ( 'click', lampOnOff );
+
 lamp.addEventListener ( 'mouseover', lampOn );
 lamp.addEventListener ( 'mouseleave', lampOff );
 lamp.addEventListener ( 'dblclick', lampBroken );
