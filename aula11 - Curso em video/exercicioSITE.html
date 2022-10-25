@@ -7,24 +7,34 @@
     <title>tu es gringo?</title>
 </head>
 <body>
-    <h2>Você nasceu em qual país?</h2>
-    <input type="text" name="txtpais" id="txtpais"> <input type="button" id="verificar" value="Verificar" onclick="verificar()">
+    <form name="formPais">
+        <h2>Você nasceu em qual país?</h2>
+        <input type="text" name="pais"> 
+        <input type="submit" value="Verificar" name="verificarBtn">
+    </form>
+    
     <div id="res"></div>
 
     <script> 
-    
-        function verificar(){
-            var txtp = window.document.querySelector('input#txtpais');
-            var res = window.document.querySelector('div#res')
-            var pais = txtp.value;
-            res.innerHTML = `<p>Seu país de origem é <strong>${pais}</strong></p>`;
-            if (pais == "Brasil" || pais == "brasil") {
-                res.innerHTML += `<p>Você é Brasileiro.`;
-            } else {
-                res.innerHTML += `<p>tu és gringo!</p>`; 
-            }
+        const { formPais } = document.forms;
+        const { pais } = formPais.elements;
 
-        }
+        formPais.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nomePais = pais.value;
+
+            const res = document.querySelector('#res');
+            res.innerHTML = `
+                <p>Seu país de origem é <strong>${nomePais}</strong></p>
+                `;
+
+                if (nomePais.toLowerCase() === 'brasil') {
+                    res.innerHTML += '<p>Você é Brasileiro!</p>';
+                } else {
+                    res.innerHTML += '<p>Tu és gringo!</p>'
+                }
+        })
     </script>
 
 
