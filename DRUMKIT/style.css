@@ -35,8 +35,10 @@ main {
     height: 100px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    gap: 15px;
 }
 
 
@@ -46,8 +48,12 @@ main {
     height: 100px;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: #000000BB;
     color: bisque;
     font-size: calc(3vw + 20px);
+    border: 1px solid bisque;
+    user-select: none;
+    cursor: pointer;
+
 
 }
