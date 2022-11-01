@@ -29,15 +29,18 @@ const tocarSom = (letra) => {
 }
 
 const adicionarEfeito = (letra) => document.getElementById(letra)
-                                           .classList.add('active')
+                                           .classList.toggle('active')
 
 const removerEfeito = (letra) => {
     const div = document.getElementById(letra);
+    const removeActive = () => div.classList.remove('active');
+    div.addEventListener('transitionend',removeActive);
     
 }
 
 const ativarDiv = (evento) => {
-    const letra = evento.target.id;
+    
+    const letra = evento.type == 'click' ? evento.target.id : evento.key.toUpperCase();
     const letraPermitida = sons.hasOwnProperty(letra);
     if (letraPermitida){
         adicionarEfeito(letra);
@@ -48,3 +51,5 @@ const ativarDiv = (evento) => {
 
 exibir(sons);
 document.getElementById('container').addEventListener('click', ativarDiv);
+
+window.addEventListener('keydown',ativarDiv);
