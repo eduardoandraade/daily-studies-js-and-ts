@@ -8,6 +8,10 @@ export class Component {
         this.build()
     }
 
+    getElement() {
+        return this.#element
+    }
+
     build() {
         this.#element = document.createElement(this.tag)
         Object.assign(this.#element, this.options)
