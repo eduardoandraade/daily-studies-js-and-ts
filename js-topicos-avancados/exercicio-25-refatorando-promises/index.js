@@ -2,7 +2,7 @@
 
 async function imc(weight, height) {
         if (typeof weight !== 'number' || typeof height !== 'number')
-            throw new Error('arguments must be of type number')
+            return Promise.reject('arguments must be of type number')
         else 
             return weight / (height * height)
 }
@@ -10,7 +10,9 @@ async function imc(weight, height) {
 
 async function showImc(weight, height) {
         try {
-            const result = await imc(window,height)
+            console.log(`Calculando o IMC para peso ${weight} e ${height} `)
+            
+            const result = await imc(weight,height)
 
             console.log(`O resultado do IMC foi de ${result}.`)
 
@@ -23,11 +25,10 @@ async function showImc(weight, height) {
             console.log(error.message)
         }
 
-        console.log(`Calculando o IMC para peso ${weight} e ${height} `)
 }
 
 showImc(71, 1.74)
 showImc(58, 1.64)
-showImc(71, 'texto')
+showImc(71, 1.90)
 showImc(48, 1.72)
 showImc(82, 1.50)
