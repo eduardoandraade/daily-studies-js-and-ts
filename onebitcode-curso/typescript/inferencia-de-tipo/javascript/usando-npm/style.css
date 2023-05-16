@@ -1,0 +1,7 @@
+.star-rating {
+        background: url("myStar_off.svg") !important;
+}
+ 
+.star-rating .star-value{
+        background: url("myStar_on.svg") !important;
+}

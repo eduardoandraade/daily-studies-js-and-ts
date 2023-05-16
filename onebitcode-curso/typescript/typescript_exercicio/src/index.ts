@@ -30,3 +30,13 @@ const currentShip = sendSpaceship(spaceshipName, spaceshipCaptain)
 const speed = Number(prompt('Insira a velocidade para a qual deseja que a nave voe.'))
 
 accelerate(speed, currentShip)
+
+function spaceship (name:string, pilot:string, crewLimit:number, crew: [], inMission: false ) {
+    const spaceship = {
+        name,
+        pilot,
+        crewLimit: 0,
+        crew,
+    }
+}
+
