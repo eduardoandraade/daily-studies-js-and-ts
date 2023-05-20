@@ -10,15 +10,24 @@
 </head>
 <body>
 
-    <button>abrir modal</button>
+    <!-- Conteúdo da página -->
+  
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Feedback de Atendimento</h2>
+      <p>Obrigado pelo seu feedback!</p>
+    </div>
+  </div>
 
-    <dialog> 
-        <h1>Title</h1>
+  <!-- Formulário -->
+  <form id="feedbackForm" action="processar_form.php" method="POST">
+    <!-- Campos do formulário -->
+    <button id="enviarBtn" type="submit">Enviar</button>
+  </form>
 
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus nemo obcaecati possimus facere architecto harum enim molestiae? Dolores laborum, numquam eos quod corrupti atque autem maiores voluptatibus id ipsam nesciunt saepe facilis ducimus, fugit minima consectetur voluptates! A accusantium cupiditate ratione officiis temporibus, fugiat reprehenderit in consequuntur ex repellat? Similique, voluptate optio ab pariatur error itaque quasi.</p>
-    
-        <button>Ok!</button>
-    </dialog>
+
     
     
 
