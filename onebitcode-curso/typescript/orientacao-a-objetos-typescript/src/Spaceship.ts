@@ -23,7 +23,7 @@ class Spaceship {
     }
   }
   
-  class Fighter extends Spaceship {
+  class Fiighter extends Spaceship {
     weapons: number
 
     constructor(name: string, captain: string, weapons: number) {
@@ -43,7 +43,7 @@ class Spaceship {
     }
   }
   
-  let ship = new Fighter('USS Enterprise', 'James T. Kirk', 10)
+  let ship = new Fiighter('USS Enterprise', 'James T. Kirk', 10)
   
 
   ship.accelerate(50, 10)
