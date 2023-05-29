@@ -41,3 +41,17 @@ interface Ship {
   // pois a ambas é atribuido o tipo Ship
   const copy1 = cloneShip(falcon, 'Milano', 'Peter')
   const copy2 = cloneShip(xWing, 'Black One', 'Poe')
+
+  interface EnemyShip {
+    name: string
+    pilot: string
+    flag?: string
+  }
+
+  const enemyCopy = cloneShip(falcon, 'Enemy', 'Enemy')
+  const enemyCopy2 = cloneShip<EnemyShip>(falcon, 'Enemy', 'Enemy')
+
+  // aqui temos um erro por conta do tipo Ship
+  // enemyCopy.flag = 'Imperial'
+  // já aqui temos a propriedade opcional flag
+  enemyCopy2.flag = 'Imperial'

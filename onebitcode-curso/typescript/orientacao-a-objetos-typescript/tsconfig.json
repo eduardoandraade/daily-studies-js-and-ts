@@ -2,6 +2,7 @@
     "compilerOptions": {
         "module": "ES2015",
         "outDir": "public/dist",
-        "watch": true
+        "watch": true,
+        "experimentalDecorators": true
     }
 }
