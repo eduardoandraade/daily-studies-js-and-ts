@@ -1,0 +1,9 @@
+.f-container {
+    padding: 0.5rem;
+}
+
+.f-container>p{
+    font-size: 0.8rem;
+}
+
+
