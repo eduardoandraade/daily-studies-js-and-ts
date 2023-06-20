@@ -7,7 +7,7 @@ function Main() {
   return (
     <div className="container-main">
       <Counter title={'Contador I'}/>
-      <Counter title={'Contador II'} initialValue={10}/>
+      <Counter title={'Contador II'} initialValue={5}/>
       <Footer/>
     </div>
   );
