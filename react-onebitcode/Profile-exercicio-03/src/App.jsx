@@ -7,7 +7,7 @@ function App() {
     <div className='app'>
       <Profile 
         avatar="https://randomuser.me/api/portraits/men/41.jpg"
-        name="Eduardo Andrade"
+        name="Duds Andrade"
         bio="Fullstack javascript developer at Acme Inc."
         email="eduardoandraade@outlook.com"
         phone="+55 (85) 99675-9585"
