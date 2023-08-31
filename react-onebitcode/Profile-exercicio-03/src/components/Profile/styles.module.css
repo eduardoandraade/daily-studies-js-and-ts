@@ -18,3 +18,8 @@
     gap: 1rem;
     align-items: center;
   }
+
+  .followBtn {
+    margin-left: .7rem;
+    padding: .11rem .5rem;
+  }

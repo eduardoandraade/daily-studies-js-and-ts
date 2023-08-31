@@ -1,10 +1,12 @@
 import './App.css'
 import Profile from './components/Profile'
+import Header from './components/Header/Header'
 
 function App() {
 
   return (
     <div className='app'>
+      <Header/>
       <Profile 
         avatar="https://randomuser.me/api/portraits/men/41.jpg"
         name="Duds Andrade"
