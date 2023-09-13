@@ -1,35 +1,36 @@
-import React from 'react'
+import React, { useState, useSyncExternalStore } from 'react'
 import styles from './styles.module.css'
 
 
 const Header = () => {
+    const [name, setName] = useState("Duds")
+    const [count, setCount] = useState(0);
+
     const handleChange = () => {
         const names = ['Isa', 'Duds', 'Chico'];
         const int = Math.floor(Math.random() * 3);
-        return names[int];
+        setName(names[int]);
     }
 
     const handleClick = () => {
-        console.log("You Clicked it / Você clicou")
+        setCount(count + 1);
+        console.log(count);
     }
     const handleClick2 = (name) => {
-        console.log(`${name} was clicked / Duds clicou  `)
-    }
-    const handleClick3 = (ev) => {
-        console.log(ev.target.innerText)
+        console.log(count)
     }
 
     return (
-    <div className={styles.header}>
-        <div 
+    <main className={styles.header}>
+        <p 
             className={styles.text}
             onDoubleClick={handleClick}
         >
-            Oi, {handleChange()}</div>
+            Oi, {name}</p>
+        <button onClick={handleChange}>name change</button>
         <button onClick={handleClick}>Clique aqui</button>
-        <button onClick={() => handleClick2('Duds')}>Clique aqui</button>
-        <button onClick={(ev) => handleClick3(ev)}>Clique aqui</button>
-    </div>
+        <button onClick={handleClick2}>Clique aqui</button>
+    </main>
   )
 }
 
