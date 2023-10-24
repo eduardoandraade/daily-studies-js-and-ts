@@ -5,7 +5,10 @@ import './App.css'
 function App() {
   const [ password, setPassword ] = useState("");
   const [ copyText, setCopyText ] = useState("Copiar")
-  const [passwordSize, setPasswordSize] = useState(10)
+  const [ customSize, setCustomSize ] = useState(10)
+  const [ showInput, setShowInput ] = useState(false)
+
+  const passwordSize = showInput ? customSize : 8
 
 
   function generate() {
@@ -28,10 +31,21 @@ function App() {
     <div className='App'>
       <h1>Gerador de Senha</h1>
       <div>
-        <label htmlFor="passwordSize">Tamanho:</label>
-        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize}/>
+        <label htmlFor="showInput">Customizar Tamanho:</label>
+        <input 
+          type="checkbox"
+          id="showInput"
+          value={showInput}
+          onChange={() => setShowInput(currentState => !currentState)} 
+        />
       </div>
-      <button onClick={generate}>Gerar senha com {passwordSize} caracteres</button>
+      {showInput ? (
+        <div>
+          <label htmlFor="passwordSize">Tamanho:</label>
+          <Input passwordSize={customSize} setPasswordSize={setCustomSize}/>
+        </div>
+      ) : null}
+      <button onClick={generate}>Gerar senha com {customSize} caracteres</button>
       <button onClick={copyToClipboard}>{copyText}</button>
       <div className='password'>{password}</div>
     </div>
