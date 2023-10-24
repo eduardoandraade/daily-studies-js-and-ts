@@ -1,0 +1,17 @@
+.wrapper {
+    
+        background-color: black;
+        border: 0;
+        border-radius: .5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        margin: .7rem 0;
+        padding: .75rem;
+        transition: .3s;
+    
+}
+
+.wrapper:hover {
+    cursor: pointer;
+    margin-left: .2rem;
+}
